@@ -4,9 +4,9 @@ Some example layouts to accompany Modern Layouts talk
 
 ## How to
 
-```npm install``
+```npm install```
 
-```npm start``
+```npm start```
 
 
 
