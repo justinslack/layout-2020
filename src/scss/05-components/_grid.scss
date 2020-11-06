@@ -1,0 +1,36 @@
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+}
+
+.two--column {
+  grid-template-columns: 2fr 2fr;
+  gap: 2rem;
+}
+
+.container {
+  background-color: var(--grey);
+  height: 15em;
+  padding: 2rem;
+  margin-bottom: 4rem;
+  width: 600px;
+}
+
+.item {
+  color: white;
+  padding: 10px;
+  background-color: var(--background);
+  border: 1px solid rgba(111,41,97,.5);
+}
+
+.align-both {
+  &.active {
+  // justify-content: space-between;
+  // align-content: space-between;
+  }
+}

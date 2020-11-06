@@ -1,0 +1,24 @@
+// All layout elements
+
+body {
+  justify-items: center;
+  display: grid;
+  grid-template-rows: 150px repeat(12, 1fr);
+}
+
+.contents {
+  grid-row: 2 / 12;
+  padding: 0;
+  max-width: 1200px;
+  width: 80%;
+}
+
+.articles--list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4rem 1rem;
+  @include breakpoint(60em) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
