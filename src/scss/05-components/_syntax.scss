@@ -49,11 +49,14 @@ pre[class*="language-"] {
   overflow: auto;
   background: #f5f6f9;
 }
-:not(pre) > code[class*="language-"] {
-  padding: .1em .3em;
-  border-radius: .3em;
-  color: #db4c69;
-  background: #f9f2f4;
+
+:not(pre) > code {
+  background: #f6f3f2;
+  color: #333;
+  font-size: calc(.75em + .1vw);
+  line-height: calc(1.5em + .2vw) !important;
+  padding: 0 .2725em;
+  display: inline-block;
 }
 /*********************************************************
 * Tokens

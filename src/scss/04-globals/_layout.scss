@@ -16,9 +16,13 @@ body {
 .articles--list {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 4rem 1rem;
+  grid-gap: 4rem;
   @include breakpoint(60em) {
     grid-template-columns: 1fr 1fr;
   }
 
+}
+
+.contents--article-desc {
+  
 }
