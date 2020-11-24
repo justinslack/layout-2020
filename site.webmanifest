@@ -1,6 +1,7 @@
 {
   "name": "Layout",
   "short_name": "Layout",
+  "start_url": "https://layout-2020.netlify.app/",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
