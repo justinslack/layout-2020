@@ -6,6 +6,12 @@ Some example layouts to accompany Modern Layouts talk
 
 ```npm install```
 
+### Build CSS
+
+```npm run-script scss```
+
+### Run server etc
+
 ```npm start```
 
 
