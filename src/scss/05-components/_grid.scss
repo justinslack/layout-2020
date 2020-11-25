@@ -9,7 +9,20 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 100px 100px 100px;
+  grid-template-columns: 300px 300px 300px;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.with-gap {
+  gap: 2rem;
+}
+
+.column{
+  column-count: 3;
+  gap: 40px;
 }
 
 .two--column {
@@ -20,7 +33,7 @@
 
 .container {
   background-color: var(--grey);
-  // height: 15em;
+  height: 15em;
   padding: 2rem;
   margin-bottom: 4rem;
 }
@@ -81,10 +94,16 @@ input:checked + label {
   }
 }
 
-.toggle-height:checked {
-  ~ .add-height {
-    justify-content: space-between;
-    align-content: space-between;
+.toggle-move:checked {
+  ~ .align-move {
+    align-items: flex-end;
+  }
+}
+
+.toggle-move-grid:checked {
+  ~ .align-move {
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -164,4 +183,71 @@ img {
   background-image: linear-gradient(45deg, rgba(0, 104, 20, 0.6) 0%, rgba(255, 105, 116, 0.9) 99%), url(../img/hils.jpg);
 
   grid-column-start: span 2;
+}
+
+// Logical properties
+
+.w-mode--container {
+  height: auto;
+  writing-mode: horizontal-tb;
+}
+
+.w-mode--item {
+  border-inline-start: 1rem #c94e4b solid;
+  border-block-start: 1rem #3d8bb1 solid;
+  border-inline-end: 1rem #6a478f solid;
+  border-block-end: 1rem #49b293 solid;
+  padding: 10px;
+  margin: 10px;
+  height: 200px;
+  width: 200px;
+}
+
+.logical {
+  padding-block-start: 3rem;
+}
+
+.physical {
+  padding-top: 3rem;
+}
+
+
+// Masonry
+
+.masonry {
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: masonry;
+
+  &.masonry-rows {
+    grid-template-columns: masonry;
+    grid-template-rows: repeat(3, 100px);
+  }
+
+  > div {
+    background-color: #49b293;
+    border: 1px solid #fff;
+    &:nth-of-type(2n) {
+      background-color: #c94e4b;
+    }
+
+    &:nth-of-type(3n) {
+      background-color: #3d8bb1;
+    }
+
+    &:nth-of-type(4n) {
+      background-color: #6a478f;
+    }
+
+    &:nth-of-type(5n) {
+      background-color: #f0e87e;
+    }
+
+    &:nth-of-type(6n) {
+      background-color: #f0a27e;
+    }
+
+  }
+
 }

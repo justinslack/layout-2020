@@ -17,55 +17,78 @@
   </head>
   <body>
     <section class="contents">
-      <h1>Box alignment</h1>
-      <p>The <a href="https://www.w3.org/TR/css-align-3/">Box Alignment</a> Specification details how alignment works in various layout methods. The specification identifies the following alignment methods:</p>
-      <ul class="bullet--list">
-        <li><code>justify-content</code></li>
-        <li><code>align-content</code></li>
-        <li><code>justify-self</code></li>
-        <li><code>align-self</code></li>
-        <li><code>justify-items</code></li>
-        <li><code>align-items</code></li>
-      </ul>
+      <h1>Gap</h1>
+      <p>The <code>gap</code> property is a shorthand for <code>row-gap</code> and <code>column-gap</code>, and specifies the size of the space between rows and columns (commonly referred to as the gutter) within grid, flex, and multi-column layouts.</p>
+
+      <p><code>gap</code> is specified as either a length or a percentage and can take a number of units of measure.</p>
+
+      <pre class="language-css">
+        <code>
+/* Single length value: */
+gap: 16px;
+gap: 2em;
+gap: 5vmin;
+
+/* Double lenght value: */
+gap: 16px 32px;
+gap: 2em 1em;
+gap: 5vmin 3vmin;
+
+/* Single percentage value: */
+gap: 10%;
+
+/* Double percentage value: */
+gap: 10% 15%;
+
+/* calc() values */
+gap: calc(5% + 20px);
+gap: calc(16px + 10%) calc(15% - 10px);
+        </code>
+      </pre>
         
-      <h2 class="intro">Spare space</h2>
-      <div class="grid two--column">
-        <input type="checkbox" id="flex-align" class="toggle-space">
-        <label for="flex-align" class="toggle-label">Spare space</label> 
-        <div class="container flex align-both">
+      <h2 class="intro">Flexbox gap</h2>
+      <div class="m-b--64">
+        <div class="flex container with-gap">
           <div class="item">Block One</div>
           <div class="item">Block Two and some extra</div>
           <div class="item">Block Three</div>
           <div class="item">Block Four and some extra<br>with some height</div>
         </div>
-        <div>
           <pre><code class="language-css">
 .container{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-between;
+  gap: 2rem;
 }
           </code></pre>
         </div>
       </div>
 
-      <div class="grid two--column">
-        <input type="checkbox" id="grid-align" class="toggle-space">
-        <label for="grid-align" class="toggle-label">Spare space</label> 
-        <div class="container grid align-both">
+      <h2 class="intro">Grid gap</h2>
+      <div class="m-b--64">
+        <div class="grid container with-gap">
           <div class="item">Block One</div>
           <div class="item">Block Two and some extra</div>
           <div class="item">Block Three</div>
-          <div class="item">Block Four</div>
+          <div class="item">Block Four and some extra<br>with some height</div>
         </div>
-        <div>
           <pre><code class="language-css">
 .container{
   display: grid;
-  grid-template-columns: 100px 100px 100px;
-  justify-content: space-between;
-  align-content: space-between;
+  gap: 2rem;
+}
+          </code></pre>
+        </div>
+      </div>
+
+      <h2 class="intro">Multi-column gap</h2>
+      <div class="m-b--64">
+        <p class="column container with-gap">
+          The row-gap and column-gap properties (and their gap shorthand), when specified on a grid container, define the gutters between grid rows and grid columns. Their syntax is defined in CSS Box Alignment 3 - Gaps Between Boxes. The effect of these properties is as though the affected grid lines acquired thickness: the grid track between two grid lines is the space between the gutters that represent them. For the purpose of track sizing, each gutter is treated as an extra, empty, fixed-size track of the specified size, which is spanned by any grid items that span across its corresponding grid line.
+        </p>
+          <pre><code class="language-css">
+.column{
+  column-count: 3;
+  gap: 40px;
 }
           </code></pre>
         </div>

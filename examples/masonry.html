@@ -17,60 +17,76 @@
   </head>
   <body>
     <section class="contents">
-      <h1>Box alignment</h1>
+      <h1>Masonry</h1>
       <p>The <a href="https://www.w3.org/TR/css-align-3/">Box Alignment</a> Specification details how alignment works in various layout methods. The specification identifies the following alignment methods:</p>
-      <ul class="bullet--list">
-        <li><code>justify-content</code></li>
-        <li><code>align-content</code></li>
-        <li><code>justify-self</code></li>
-        <li><code>align-self</code></li>
-        <li><code>justify-items</code></li>
-        <li><code>align-items</code></li>
-      </ul>
+      
         
-      <h2 class="intro">Spare space</h2>
-      <div class="grid two--column">
-        <input type="checkbox" id="flex-align" class="toggle-space">
-        <label for="flex-align" class="toggle-label">Spare space</label> 
-        <div class="container flex align-both">
-          <div class="item">Block One</div>
-          <div class="item">Block Two and some extra</div>
-          <div class="item">Block Three</div>
-          <div class="item">Block Four and some extra<br>with some height</div>
+      <h2 class="intro">Masonry columns</h2>
+      <p>Apply <code>block-size</code> to children</p>
+      <div class="m-b--64">
+        <div class="masonry m-b--64">
+          <div style="block-size: 4em;"></div>
+          <div style="block-size: 6em;"></div>
+          <div style="block-size: 12em;"></div>
+          <div style="block-size: 5em;"></div>
+          <div style="block-size: 4.2em;"></div>
+          <div style="block-size: 5em;"></div>
+          <div style="block-size: 5.5em;"></div>
+          <div style="block-size: 6em;"></div>
+          <div style="block-size: 7.5em;"></div>
+          <div style="block-size: 2.8em;"></div>
+          <div style="block-size: 5em;"></div>
+          <div style="block-size: 4.2em;"></div>
+          <div style="block-size: 3em;"></div>
+          <div style="block-size: 6em;"></div>
         </div>
-        <div>
           <pre><code class="language-css">
-.container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-between;
-}
-          </code></pre>
-        </div>
-      </div>
-
-      <div class="grid two--column">
-        <input type="checkbox" id="grid-align" class="toggle-space">
-        <label for="grid-align" class="toggle-label">Spare space</label> 
-        <div class="container grid align-both">
-          <div class="item">Block One</div>
-          <div class="item">Block Two and some extra</div>
-          <div class="item">Block Three</div>
-          <div class="item">Block Four</div>
-        </div>
-        <div>
-          <pre><code class="language-css">
-.container{
+.masonry {
   display: grid;
-  grid-template-columns: 100px 100px 100px;
-  justify-content: space-between;
-  align-content: space-between;
+  gap: 0;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: masonry;
 }
           </code></pre>
         </div>
       </div>
-
+      
+      <h2 class="intro">Masonry rows</h2>
+      <p>Apply <code>inline-size</code> to children</p>
+      <div class="m-b--64">
+        <div class="masonry masonry-rows m-b--64">
+          <div style="inline-size: 4em;"></div>
+          <div style="inline-size: 6em;"></div>
+          <div style="inline-size: 12em;"></div>
+          <div style="inline-size: 5em;"></div>
+          <div style="inline-size: 4.2em;"></div>
+          <div style="inline-size: 5em;"></div>
+          <div style="inline-size: 5.5em;"></div>
+          <div style="inline-size: 6em;"></div>
+          <div style="inline-size: 7.5em;"></div>
+          <div style="inline-size: 2.8em;"></div>
+          <div style="inline-size: 5em;"></div>
+          <div style="inline-size: 4.2em;"></div>
+          <div style="inline-size: 3em;"></div>
+          <div style="inline-size: 6em;"></div>
+        </div>
+          <pre><code class="language-css">
+.masonry {
+  display: grid;
+  gap: 0;
+  grid-template-columns: masonry;
+  grid-template-rows: repeat(3, 100px);
+}
+          </code></pre>
+        </div>
+      </div>
+      <h3>Coming soon:</h3>
+      <ul class="bullet--list">
+        <li>Spaning items</li>
+        <li>Autoflow</li>
+        <li>Align tracks</li>
+        <li>Justify tracks</li>
+      </ul>
     </section>
     <script>
       if ('serviceWorker' in navigator) {
