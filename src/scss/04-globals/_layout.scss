@@ -4,6 +4,7 @@ body {
   justify-items: center;
   display: grid;
   grid-template-rows: 150px repeat(12, 1fr);
+  margin: 0 0 12rem;
 }
 
 .contents {
@@ -21,8 +22,4 @@ body {
     grid-template-columns: 1fr 1fr;
   }
 
-}
-
-.contents--article-desc {
-  
 }

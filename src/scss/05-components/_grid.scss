@@ -1,3 +1,7 @@
+.block {
+  display: block;
+}
+
 .flex {
   display: flex;
   flex-wrap: wrap;
@@ -104,4 +108,82 @@ input:checked + label {
     justify-content: space-between;
     align-content: space-between;
   }
+}
+
+// Simple gallery
+
+.simple-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 1rem;
+  padding: 6rem;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+// Complex grid
+
+.complex-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(minmax(13rem, 1fr));
+  min-height: 100vh;
+}
+
+.complex-grid > div {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  color:  white;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.complex-grid > div:nth-of-type(1) {
+  background-image: linear-gradient(45deg, rgba(105, 166, 255, 0.8) 0%, rgba(255, 105, 116, 0.6) 99%), url(../img/mountain.jpg);
+
+  grid-row-start: span 2;
+  grid-column-start: span 2;
+
+}
+
+.complex-grid > div:nth-of-type(2) {
+   background-image: linear-gradient(45deg, rgba(0, 104, 20, 0.6) 0%, rgba(0, 50, 20, 0.6) 99%), url(../img/forest.jpg);
+  color:  pink;
+
+  grid-column-start: span 2;
+}
+
+.complex-grid > div:nth-of-type(3) {
+  background-color:  #333;
+  padding:  2rem;
+
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.complex-grid > div:nth-of-type(4) {
+  background-image: linear-gradient(45deg, rgba(0, 99, 137, 0.6) 0%, rgba(99, 137, 160, 0.9) 99%, rgba(255, 105, 116, 0.9) 100%), url(../img/lake.jpg);
+}
+
+.complex-grid > div:nth-of-type(5) {
+  background-image: linear-gradient(45deg, rgba(0, 42, 255, 0.4) 0%, rgba(13, 35, 76, 0.9) 99%), url(../img/sea.jpg);
+
+  grid-column-start: span 2;
+}
+
+.complex-grid > div:nth-of-type(6) {
+  background-image: linear-gradient(45deg, rgba(0, 104, 20, 0.6) 0%, rgba(255, 105, 116, 0.9) 99%), url(../img/hils.jpg);
+
+  grid-column-start: span 2;
 }
